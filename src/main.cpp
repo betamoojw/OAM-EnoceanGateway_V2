@@ -21,9 +21,9 @@ void SERCOM2_Handler()
     #include "UsbExchangeModule.h"
 #endif
 
-// #ifdef ARDUINO_ARCH_RP2040
-//     #pragma message "Pico Core Version: " ARDUINO_PICO_VERSION_STR
-// #endif
+#ifdef ARDUINO_ARCH_RP2040
+    #pragma message "Pico Core Version: " ARDUINO_PICO_VERSION_STR
+#endif
 
 EnOceanDevice device[MAX_NUMBER_OF_DEVICES] = {EnOceanDevice()}; 
 void setup()
@@ -71,8 +71,6 @@ void setup()
     {
         enOcean.configureDeviceBaseID(device[i], i);
     }
-
-    
 
 }
 
